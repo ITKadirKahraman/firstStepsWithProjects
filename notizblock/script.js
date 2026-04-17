@@ -16,6 +16,12 @@ function renderNotes() {
     }
 }
 
+function init() {
+    getFromLocalStorage();
+    renderNotes();
+    renderTrashNotes();
+}
+
 // gib das Template von Notizen
 function getNoteTemplate(indexNotes) {
     // 3.2 wann muss die Notiz gelöscht werden
@@ -71,6 +77,40 @@ function permanentlyDelete(trashIndexDelete) {
     trashNotes.splice(trashIndexDelete, 1);
     renderNotes();
     renderTrashNotes();
+}
+
+function saveDate() {
+    let inputRef = document.getElementById('loadInput');
+    if(inputRef.value != ""){
+        notes.push(inputRef.value);
+    }
+    saveToLocalStorage();
+    renderNotes();
+    inputRef.value = "";
+}
+
+
+function saveToLocalStorage() {
+    const data = {
+        title: notesTitles,
+        note: notes,
+        trashNoteTitles: trashNoteTitles,
+        trashNotes: trashNotes,
+    };
+    localStorage.setItem("notesData", JSON.stringify(data));
+}
+
+function getFromLocalStorage() {
+    let data = localStorage.getItem("notesData");
+    if(data){
+        const parsedData = JSON.parse(data);
+
+        notesTitles = parsedData.title || [];
+        notes = parsedData.notes || [];
+        trashNoteTitles = parsedData.trashNoteTitles || [];
+        trashNotes = parsedData.trashNote || [];
+    }
+    console.log(data);
 }
 
 // 4. notizen archivieren
