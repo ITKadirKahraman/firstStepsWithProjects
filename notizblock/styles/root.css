@@ -1,0 +1,12 @@
+:root{
+    /* 
+    ****** COLORS
+    */
+    --main-color: black;
+
+    /*
+    ****** SIZE
+    */
+    --size-100vh: 100vh;
+    --size-188px: 188px; 
+}
