@@ -1,0 +1,16 @@
+/* Damit mein Editor es lesen kann*/
+@import "./root.css";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    min-height: calc(var(--size-100vh) - var(--size-188px));
+}
