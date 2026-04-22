@@ -1,10 +1,9 @@
 .container {
-    display: flex;
+    position: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 500px;
-    width: 80%;
+    max-width: 80%;
     padding: 10%;
 }
 
@@ -18,15 +17,16 @@
 
 .inputSection {
     height: 400px;
-    width: 100%;
+    width: 80%;
     border-radius: 20px;
     border: solid 2px;
-    padding: 20px;
+    padding: 10%;
     border-color: black;
     background-color: var(--card-color);
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 10px;
 }
 
 .input {
@@ -62,4 +62,46 @@
 }
 .btn:hover{
     background: magenta;
+}
+
+.createdNote {
+    background: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.createdNote h3 {
+    color: #667eea;
+    margin-bottom: 10px;
+    margin: 0;
+}
+
+.createdNote p {
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.deleteBtn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: red;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.deleteBtn:hover{
+    background: #7F1734;
 }
