@@ -1,0 +1,44 @@
+:root{
+    /*
+        COLORS
+    */
+    --mainBackground-color: rgb(68,191,219);
+    --background-color: rgb(252, 251, 251);
+    --card-color: rgb(207, 233, 241);
+    --addButton-color: rgb(68,191,219);
+    --color: rgb(0, 0, 0);
+
+    /*
+        SIZE
+    */
+
+    /*
+    ****** px
+    */
+
+    --size-15px: 15px;
+    --size-35px: 35px;
+    --size-80px: 80px;
+    --size-100px: 100px;
+    --size-188px: 188px;
+    --size-200px: 200px;
+    --size-280px: 280px;
+    --size-480px: 480px;
+
+    /*
+    ****** %
+    */
+
+    --size-100P: 100%;
+
+    /*
+    ****** vh
+    */
+
+    --size-100vh: 100vh;
+
+    /*
+    ******
+    */
+    --font: 'Courier New', Courier, monospace;
+}
