@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notiz</title>
+    <link rel="stylesheet" href="styles/root.css">
+    <link rel="stylesheet" href="styles/standard.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body onload="getFromLocalStorage()">
+    <header>
+    </header>
+    <main>
+        <div class="container">
+            <h1 class="h1Header">Notizblock</h1>
+            <form class="inputSection" onsubmit="event.preventDefault(); addNote()">
+                <input class="input" type="text" id="inputTitle" name="title" placeholder="Der Title der Notiz" maxlength="100" autocomplete="off">
+                <textarea class="noteInput" name="note" id="noteInput" placeholder="Schreibe deine Notiz..." maxlength="1000"></textarea>
+                <button type="submit" class="btn" id="btn">Notiz hinzufügen</button>
+            </form>
+            <div id="notesContainer"></div>
+        </div>
+    </main>
+    <footer></footer>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
