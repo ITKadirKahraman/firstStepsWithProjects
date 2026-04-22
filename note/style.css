@@ -1,0 +1,65 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 500px;
+    width: 80%;
+    padding: 10%;
+}
+
+.h1Header{
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--background-color);
+    font-family: var(--font);
+    font-size: var(--size-35px);
+}
+
+.inputSection {
+    height: 400px;
+    width: 100%;
+    border-radius: 20px;
+    border: solid 2px;
+    padding: 20px;
+    border-color: black;
+    background-color: var(--card-color);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input {
+    background: var(--background-color);
+    width: 100%;
+    height: 35px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.noteInput {
+    width: 100%;
+    height: 280px;
+    min-height: 100px;
+    margin-bottom: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.btn{
+    width: 100%;
+    height: 40px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    color: black;
+    background: violet;
+}
+.btn:hover{
+    background: magenta;
+}
