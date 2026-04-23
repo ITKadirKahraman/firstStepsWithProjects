@@ -7,7 +7,6 @@ function renderNotes() {
     notes.forEach((note, index) => {
         contentRef.innerHTML += createNote(note, index);
     });
-        
 }
 
 function createNote(note, index) {
@@ -21,15 +20,19 @@ function createNote(note, index) {
 function addNote() {
     const inputTitle = document.getElementById('inputTitle');
     const noteInput = document.getElementById('noteInput');
+    const message = document.getElementById('message');
 
     const title = inputTitle.value.trim();
     const noteText = noteInput.value.trim();
 
     if(title === "" && noteText === ""){
+        message.innerHTML += createTitleText();
         return;
     }else if(title === "") {
+        message.innerHTML += createTitle();
         return;
     }else if(noteText === ""){
+        message.innerHTML += createText();
         return;
     }
 
@@ -44,6 +47,30 @@ function addNote() {
     noteInput.value = "";
 }
 
+function createTitleText() {
+    return `
+    <article class="message">
+        <p>Du musst noch Title sowie ein Text schreiben!</p>
+        <button onclick="cancelMessage()">Ok</button>
+    </article>`;
+}
+
+function createTitle() {
+    return `
+    <article class="message">
+        <p>Du musst noch ein Title schreiben!</p>
+        <button onclick="cancelMessage()">Ok</button>
+    </article>`;
+}
+
+function createText() {
+    return `
+    <article class="message">
+        <p>Du musst noch ein Text schreiben!</p>
+        <button onclick="cancelMessage()">Ok</button>
+    </article>`;
+}
+
 function deleteMessage(indexNote) {
     const messageRef = document.getElementById('deleteMessage');
     deleteIndex = indexNote;
@@ -51,7 +78,8 @@ function deleteMessage(indexNote) {
 }
 
 function createForm() {
-    return `<article class="message">
+    return `
+    <article class="message">
         <p>Willst du die Notiz wirklich löschen?</p>
         <button onclick="conformDelete()">Ja</button>
         <button onclick="cancelDelete()">Nein</button>
@@ -74,6 +102,11 @@ function cancelDelete() {
     const messageRef = document.getElementById('deleteMessage');
     messageRef.innerHTML = "";
     deleteIndex = null;
+}
+
+function cancelMessage() {
+    const messageRef = document.getElementById('message');
+    messageRef.innerHTML = ""; 
 }
 
 function saveToLocalStorage() {
