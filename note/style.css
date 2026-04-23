@@ -105,3 +105,41 @@
 .deleteBtn:hover{
     background: #7F1734;
 }
+
+.message {
+    z-index: 100;
+    border: 3px solid black;
+    border-radius: 10px;
+    color: red;
+    background: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.message button {
+    background: violet;
+    font-size: 14px;
+    color: black;
+    justify-content: space-around;
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+.message button:hover {
+    background: magenta;
+}
+
+.message p {
+    margin: 0;
+    padding-bottom: 5px;
+}
