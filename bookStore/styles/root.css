@@ -1,0 +1,30 @@
+:root {
+    /*
+    ****** COLORS
+    */
+
+    /*
+    ****** Fonts
+    */
+    --font: 'Courier New', Courier, monospace;
+
+    /*
+    ****** size
+    */
+    --size-0: 0;
+
+    /*
+    ****** xp
+    */
+    --size-188px: 188px;
+
+    /*
+    ****** %
+    */
+    --size-100P: 100%;
+
+    /*
+    ****** vh
+    */
+    --size-100vh: 100vh;
+}
