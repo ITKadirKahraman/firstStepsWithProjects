@@ -1,22 +1,28 @@
 let initBookCard = document.getElementById('bookCard');
-const userName = document.getElementById('userNameComment');
+let userName = document.getElementById('userNameComment');
 
 function initBook() {
-    getHeader();
+    renderHeader();
+    renderBooks();
     getFromLocalStorage();
 }
 
 function renderBooks() {
     initBookCard.innerHTML = "";
     for (let indexBook = 0; indexBook < books.length; indexBook++) {
-        initBookCard.innerHTML += getCreatedBookCard[indexBook];   
+        initBookCard.innerHTML += getCreatedBookCard(indexBook);   
     }
     updateLayout();
 }
 
+function renderHeader() {
+    const header = document.getElementById('header');
+    header.innerHTML = getHeader();
+}
+
 function updateLayout() {
     if(books.length > 3){
-        initBookCard.classList.add("grindLayout");
+        initBookCard.classList.add("gridLayout");
     }
 }
 
@@ -24,11 +30,14 @@ function userNameInput() {
     return userName = "Kadir";
 }
 
-function addComment() {
+function addComment(index) {
     const commentInput = document.getElementById('inputComment');
-    const commentText = commentInput.value.trim();
-    books[index].comments.push(commentText);
-    commentText.value = "";
+    if(!commentInput == ""){
+        const commentText = commentInput.value.trim();
+        let newComment = {comment: commentText};
+        books[index].push(newComment);
+        commentInput.value = "";
+    }
 }
 
 function saveToLocalStorage() {
