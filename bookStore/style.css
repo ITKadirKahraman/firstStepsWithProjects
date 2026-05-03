@@ -1,1 +1,85 @@
+/*
+****** header
+*/
 
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+h1 {
+    margin: var(--size-0);
+    padding: var(--size-0);
+    text-align: center;
+    font-size: var(--size-24px);
+    color: var(--black);
+}
+
+/*
+****** unordered list
+*/
+
+ul {
+    margin: var(--size-0);
+    padding: var(--size-0);
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: var(--size-10px);
+}
+
+li {
+    margin: var(--size-0);
+    padding: var(--size-0);
+}
+
+li img {
+    height: var(--size-48px);
+    width: var(--size-48px);
+}
+
+/*
+****** book card
+*/
+
+.bookCard {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: var(--size-480px);
+    width: var(--size-280px);
+    border: var(--size-2px) solid var(--black);
+    border-radius: var(--size-15px);
+    background: var(--background-color);
+    color: var(--ivory);
+    padding: var(--size-0);
+}
+
+.bookHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.bookHeader h2 {
+    display: flex;
+    font-size: var(--size-24px);
+}
+
+figure {
+    margin: var(--size-0);
+    padding: var(--size-0);
+    height: var(--size-100px);
+    width: var(--size-280px);
+}
+
+figure img {
+    height: var(--size-96px);
+    width: var(--size-96px);
+    padding: var(--size-0) var(--size-32P) var(--size-0) var(--size-32P) ;
+}
