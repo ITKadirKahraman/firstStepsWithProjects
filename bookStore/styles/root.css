@@ -2,6 +2,9 @@
     /*
     ****** COLORS
     */
+    --black: rgb(0, 0, 0);
+    --background-color: rgb(10, 37, 64);
+    --ivory: rgb(255, 255, 240);
 
     /*
     ****** Fonts
@@ -14,13 +17,23 @@
     --size-0: 0;
 
     /*
-    ****** xp
+    ****** px
     */
+    --size-2px: 2px;
+    --size-10px: 10px;
+    --size-15px: 15px;
+    --size-24px: 24px;
+    --size-48px: 48px;
+    --size-96px: 96px;
+    --size-100px: 100px;
     --size-188px: 188px;
+    --size-280px: 280px;
+    --size-480px: 480px;
 
     /*
     ****** %
     */
+    --size-32P: 32.5%;
     --size-100P: 100%;
 
     /*
