@@ -1,12 +1,12 @@
 function getHeader() {
     return `
-    <ul>
-        <li><h1>Kadir's Bibliothek</h1></li>
-        <li><img src="assets/logo/headerLogo.svg" alt="Logo"></li>
-    </ul>
-    `;
+    <header class="header">
+        <ul>
+            <li><h1>BookStore</h1></li>
+            <li><img src="assets/logo/headerLogo.svg" alt="Logo"></li>
+        </ul>
+    </header>`;
 }
-
 
 function getCreatedBookCard(index) {
     return `
@@ -29,7 +29,7 @@ function getCreatedBookCard(index) {
             </nav>
             <article>
                 <span class="booksInfo" id="author"><strong>Author</strong> :${books[index].author}</span>
-                <span class="booksInfo" id="published"><strong>Erscheingsjahr</strong> :${books[index].publushedYear}</span>
+                <span class="booksInfo" id="published"><strong>Erscheingsjahr</strong> :${books[index].publishedYear}</span>
                 <span class="booksInfo" id="genre"><strong>Genre</strong> :${books[index].genre}</span>
             </article>
         </section>        
@@ -41,8 +41,8 @@ function getCreatedBookCard(index) {
                 <textarea class="outputComment" id="outputComment" rows="1" cols="10">${addComment()}</textarea>
             </article>
             <article>
-                <span class="objectName" id="objectName">[${books[index].comments.name}]</span>
-                <span class="objectComment" id="objectComment">${books[index].comments.comment}</span>
+                <span class="objectName" id="objectName">[${books[index].comments[index].name}]</span>
+                <span class="objectComment" id="objectComment">${books[index].comments[index].comment}</span>
             </article>
         </section>
 
@@ -52,6 +52,5 @@ function getCreatedBookCard(index) {
                 <img src="./assets/icons/send.svg" alt="Kommentar versenden">
             </button>
         </nav>
-    </dialog>
-    `;
+    </dialog>`;
 }
