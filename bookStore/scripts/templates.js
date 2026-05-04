@@ -1,7 +1,7 @@
 function getHeader() {
     return `
     <header class="header">
-        <ul>
+        <ul class="ulHeader">
             <li><h1>BookStore</h1></li>
             <li><img src="assets/logo/headerLogo.svg" alt="Logo"></li>
         </ul>
@@ -15,39 +15,51 @@ function getCreatedBookCard(index) {
             <h2>${books[index].name}</h2>
         </header>
 
+        <div class="separator"></div>
+
         <figure>
             <img src="./assets/logo/headerLogo.svg" alt="Abbild vom Buch">
         </figure>
 
+        <div class="separator"></div>
+
         <section>
             <nav>
-                <p class="price" id="price">${books[index].price}</p>
                 <ul>
+                    <li><p class="price" id="price">${books[index].price} €</p></li>
                     <li><span class="likes" id="likes">${books[index].likes}</span></li>
-                    <li><span class="heart"></span></li>
+                    <li>
+                        <button class="btnSend" id="btnSend">
+                            <img id="heart" src="./assets/icons/heart.svg" alt="Herz">
+                        </button>
+                    </li>
                 </ul>
             </nav>
-            <article>
-                <span class="booksInfo" id="author"><strong>Author</strong> :${books[index].author}</span>
-                <span class="booksInfo" id="published"><strong>Erscheingsjahr</strong> :${books[index].publishedYear}</span>
-                <span class="booksInfo" id="genre"><strong>Genre</strong> :${books[index].genre}</span>
+            <article class="articleBooksInfo">
+                <span class="booksInfo" id="author"><strong>Author</strong> : ${books[index].author}</span>
+                <span class="booksInfo" id="published"><strong>Erscheingsjahr</strong> : ${books[index].publishedYear}</span>
+                <span class="booksInfo" id="genre"><strong>Genre</strong> : ${books[index].genre}</span>
             </article>
-        </section>        
+        </section>    
+        
+        <div class="separator"></div>
 
         <section>
             <h3>Kommentare:</h3>
-            <article>
-                <span class="userNameComment" id="userNameComment">[${userNameInput()}]</span>
-                <textarea class="outputComment" id="outputComment" rows="1" cols="10">${addComment()}</textarea>
-            </article>
-            <article>
-                <span class="objectName" id="objectName">[${books[index].comments[index].name}]</span>
-                <span class="objectComment" id="objectComment">${books[index].comments[index].comment}</span>
-            </article>
+            <div class="commentSection">
+                <article class="commentShow">
+                    <span class="userNameComment" id="userNameComment">[${userNameInput()}]</span>
+                    <p class="outputComment" id="outputComment">Hallo</p>
+                </article>
+                <article class="comments">
+                    <span class="objectName" id="objectName">[${books[index].comments[index].name}]</span>
+                    <span class="objectComment" id="objectComment">${books[index].comments[index].comment}</span>
+                </article>
+            </div>
         </section>
 
-        <nav>
-            <input class="inputComment" type="text" id="inputComment" placeholder="Schreibe dein Kommentar...">
+        <nav class="navBottom">
+            <input class="inputComment" type="text" id="inputComment" placeholder="Schreibe dein Kommentar ...">
             <button class="btnSend" id="btnSend">
                 <img src="./assets/icons/send.svg" alt="Kommentar versenden">
             </button>
