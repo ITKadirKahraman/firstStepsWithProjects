@@ -29,8 +29,8 @@ function getCreatedBookCard(index) {
                     <li><p class="price" id="price">${books[index].price} €</p></li>
                     <li><span class="likes" id="likes">${books[index].likes}</span></li>
                     <li>
-                        <button class="btnSend" id="btnSend">
-                            <img id="heart" src="./assets/icons/heart.svg" alt="Herz">
+                        <button class="btnSend" id="btnSend" onclick="toggleLike(${index})">
+                            <img id="heart" src="./assets/icons/${books[index].liked ? 'fullHeart' : 'heart'}.svg" alt="Herz">
                         </button>
                     </li>
                 </ul>
@@ -49,18 +49,17 @@ function getCreatedBookCard(index) {
             <div class="commentSection">
                 <article class="commentShow">
                     <span class="userNameComment" id="userNameComment">[${userNameInput()}]</span>
-                    <p class="outputComment" id="outputComment">Hallo</p>
+                    <p class="outputComment" id="outputComment">Test für Hardcoded.</p>
                 </article>
                 <article class="comments">
-                    <span class="objectName" id="objectName">[${books[index].comments[index].name}]</span>
-                    <span class="objectComment" id="objectComment">${books[index].comments[index].comment}</span>
+                   ${renderComments(books[index].comments)}
                 </article>
             </div>
         </section>
 
         <nav class="navBottom">
-            <input class="inputComment" type="text" id="inputComment" placeholder="Schreibe dein Kommentar ...">
-            <button class="btnSend" id="btnSend">
+            <input class="inputComment" type="text" id="inputComment-${index}" placeholder="Schreibe dein Kommentar ...">
+            <button class="btnSend" id="btnSend" onclick="addComment(${index})">
                 <img src="./assets/icons/send.svg" alt="Kommentar versenden">
             </button>
         </nav>
