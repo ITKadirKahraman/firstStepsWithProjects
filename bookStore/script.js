@@ -2,9 +2,9 @@ let initBookCard = document.getElementById('bookCard');
 let userName = document.getElementById('userNameComment');
 
 function initBook() {
+    getFromLocalStorage();
     renderHeader();
     renderBooks();
-    getFromLocalStorage();
 }
 
 function renderBooks() {
@@ -13,6 +13,30 @@ function renderBooks() {
         initBookCard.innerHTML += getCreatedBookCard(indexBook);   
     }
     updateLayout();
+}
+
+function toggleLike(index) {
+    books[index].liked = !books[index].liked;
+    if(books[index].liked){
+        books[index].likes++;
+    }else {
+        books[index].likes--;
+    }
+
+    renderBooks();
+}
+
+function renderComments(comments) {
+    let html = "";
+
+    for (let index = 0; index < comments.length; index++) {
+        let comment = comments[index];
+
+        html += `<span class="objectName" id="objectName">[${comment.name}]</span>
+                 <span class="objectComment" id="objectComment">${comment.comment}</span>`;
+    }
+
+    return html;
 }
 
 function renderHeader() {
@@ -31,13 +55,21 @@ function userNameInput() {
 }
 
 function addComment(index) {
-    const commentInput = document.getElementById('inputComment');
-    if(!commentInput == ""){
-        const commentText = commentInput.value.trim();
-        let newComment = {comment: commentText};
-        books[index].push(newComment);
-        commentInput.value = "";
-    }
+    const input = document.getElementById(`inputComment-${index}`);
+    const text = input.value.trim();
+
+    if(text === "") return;
+    
+    const newComment = {
+        name: "Kadir",
+        comment: text
+    };
+
+    books[index].comments.push(newComment);
+    saveToLocalStorage();
+    input.value = "";
+
+    renderBooks();
 }
 
 function saveToLocalStorage() {
