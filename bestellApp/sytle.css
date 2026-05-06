@@ -1,1 +1,28 @@
+/*
+****** navigation
+*/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: var(--background-color);
+}
 
+.navContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 0 40px;
+}
+
+.imgBar {
+    height: 48px;
+    width: 48px;
+}
+
+/*
+****** header
+*/
