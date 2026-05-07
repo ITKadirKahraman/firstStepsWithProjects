@@ -3,6 +3,16 @@
     ****** COLORS
     */
     --background-color: #E76C1F;
+    --color-light: rgba(253, 234, 220, 1);
+    --color-starBackground: rgb(250, 202, 172);
+    --color-commentsBackground: rgb(114, 109, 109);
+    --color-white: rgb(255, 255, 255);
+
+    /*
+    ****** Font
+    */
+
+    --font-family: 'Palanquin';
 
     /*
     ****** SIZE
