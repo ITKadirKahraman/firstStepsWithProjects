@@ -1,1 +1,19 @@
+.imgBar {
+    height: 48px;
+    width: 48px;
+}
 
+.circleImg {
+    box-sizing: content-box;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    border-radius: 50%;
+    border: 12px solid var(--color-light);
+    top: 300px;
+}
+
+.star {
+    height: 23px;
+}
