@@ -1,9 +1,14 @@
 function init() {
+    renderPage();
+}
+
+function renderPage() {
     renderNavigation();
     renderHeader();
     renderBurger();
     renderPizza();
     renderSalad();
+    renderFooter();
 }
 
 function renderNavigation() {
@@ -59,4 +64,9 @@ function renderSaladSection() {
 function renderSalad() {
     const dishes = document.getElementById('salad');
     dishes.innerHTML = renderSaladSection();
+}
+
+function renderFooter() {
+    const footer = document.getElementById('foot');
+    footer.innerHTML = getFooter();
 }
