@@ -1,0 +1,81 @@
+@media (max-width: 520px){
+    .cardSubtext {
+        font-size: 16px;
+        font-weight: 200;
+    }
+}
+
+@media (max-width: 490px){
+    .navContainer {
+        height: 60px;
+    }
+
+    .imgBar {
+        display: none;
+    }
+
+    .headerTitle {
+        flex-direction: column-reverse;
+        padding: 10px 10px 5px 10px;
+    }
+
+    .headerText {
+        margin: 0;
+    }
+
+    .h2Container {
+        justify-content: flex-end;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .categoryIcon {
+        margin: 0;
+    }
+
+    .dishesIcon {
+        height: 60px;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 30px;
+    }
+
+    .cardSubtext {
+        font-size: 14px;
+    }
+
+    .footerContainer {
+        height: 100px;
+    }
+
+    .footerNav {
+        flex-direction: column;
+    }
+
+    #topToBot {
+        order: 3;
+    }
+
+    #midToTop {
+        order: 1;
+    }
+
+    #botToMid {
+        order: 2;
+    }
+}
+
+@media (max-width: 400px){
+    .cardHeader {
+        font-size: 18px;
+    }
+
+    .cardSubtext {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 375px){
+}
