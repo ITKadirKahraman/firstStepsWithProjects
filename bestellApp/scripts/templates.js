@@ -28,7 +28,7 @@ function getHeader() {
 function getSeperatorBurger() {
     return `<div class="categorySeperator"></div>    
         <div class="h2Container">
-            <img class="categoryIcon burgerIcon" src="assets/icons/burger.svg" alt="Burger">
+            <img class="categoryIcon dishesIcon" src="assets/icons/burger.svg" alt="Burger">
             <h2>Burger</h2>
         </div>
     `;
@@ -37,8 +37,8 @@ function getSeperatorBurger() {
 function getSeperatorPizza() {
     return `<div class="categorySeperator"></div>    
         <div class="h2Container">
-            <img class="categoryIcon burgerIcon" src="assets/icons/pizza.svg" alt="Pizza">
-            <h2>Pizza</h2>
+            <img class="categoryIcon dishesIcon" src="assets/icons/pizza.svg" alt="Pizza">
+            <h2>Pizza (30cm)</h2>
         </div>
     `;
 }
@@ -46,7 +46,7 @@ function getSeperatorPizza() {
 function getSeperatorSalad() {
     return `<div class="categorySeperator"></div>    
         <div class="h2Container">
-            <img class="categoryIcon burgerIcon" src="assets/icons/salad.svg" alt="Salad">
+            <img class="categoryIcon dishesIcon" src="assets/icons/salad.svg" alt="Salad">
             <h2>Salad</h2>
         </div>
     `;
@@ -59,9 +59,9 @@ function getBurger(index) {
             <p class="cardHeader">${burger[index].name}</p>
             <p class="cardSubtext">${burger[index].description}</p>
             <div class="priceAndAdd">
-                <p class="price"<${burger[index].price}</p>
+                <p class="price">${burger[index].price} <strong>€</strong></p>
                 <button class="btnAddBasket" id="btnAddBasket" onclick="addToBasket(index)">
-                    <img class="addIcons" id="addIcons" src="assets/icons/${burger[index].added ? 'added' : 'addToBasket'}.svg" alt="Einkaufswagen">
+                    <p class="basketText">${salad[index].added ? 'Added' : 'Add to basket'}</p>
                 </button>
             </div>
         </div>
@@ -76,9 +76,9 @@ function getPizza(index) {
             <p class="cardHeader">${pizza[index].name}</p>
             <p class="cardSubtext">${pizza[index].description}</p>
             <div class="priceAndAdd">
-                <p class="price"<${pizza[index].price}</p>
+                <p class="price">${pizza[index].price} <strong>€</strong></p>
                 <button class="btnAddBasket" id="btnAddBasket" onclick="addToBasket(index)">
-                    <img class="addIcons" id="addIcons" src="assets/icons/${pizza[index].added ? 'added' : 'addToBasket'}.svg" alt="Einkaufswagen">
+                    <p class="basketText">${salad[index].added ? 'Added' : 'Add to basket'}</p>
                 </button>
             </div>
         </div>
@@ -93,12 +93,31 @@ function getSalad(index) {
             <p class="cardHeader">${salad[index].name}</p>
             <p class="cardSubtext">${salad[index].description}</p>
             <div class="priceAndAdd">
-                <p class="price"<${salad[index].price}</p>
+                <p class="price">${salad[index].price} <strong>€</strong></p>
                 <button class="btnAddBasket" id="btnAddBasket" onclick="addToBasket(index)">
-                    <img class="addIcons" id="addIcons" src="assets/icons/${salad[index].added ? 'added' : 'addToBasket'}.svg" alt="Einkaufswagen">
+                    <p class="basketText">${salad[index].added ? 'Added' : 'Add to basket'}</p>
                 </button>
             </div>
         </div>
     </section>
     `;
+}
+
+function getFooter() {
+    return `<footer>
+        <div class="footerContainer">
+            <nav class="footerNav">
+                <a id="topToBot">
+                    <img class="copyright" src="assets/icons/copyright.svg" alt="copyright">
+                    2026 BurgerHouse 
+                </a>
+                <a id="midToTop">
+                    Imprint
+                </a>
+                <a id="botToMid">
+                    Cookie Preferences
+                </a>
+            </nav>
+        </div>
+    </footer>`;
 }
