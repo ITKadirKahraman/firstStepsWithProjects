@@ -114,10 +114,6 @@ h2 {
     font-weight: 700;
 }
 
-/*
-****** burger section
-*/
-
 .h2Container {
     gap: 40px;
     height: 60px;
@@ -125,7 +121,114 @@ h2 {
     display: flex;
 }
 
-.burgerIcon {
-    height: 120px;
-    margin-bottom: 40px;
+.dishesIcon {
+    height: 90px;
+    margin-bottom: 20px;
+}
+
+/*
+****** card
+*/
+
+.sectionBurger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-light);
+    border-radius: 12px;
+    height: 230px;
+    width: 712px;
+}
+
+.cardImg {
+    border-radius: 24px;
+    height: 80px;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+    padding: 12px;
+}
+
+.cardHeader {
+    text-align: start;
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    padding-left: 10px;
+}
+
+.cardSubtext {
+    margin: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    height: 20px;
+}
+
+.priceAndAdd {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.price{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.price strong {
+    font-weight: 600;
+    font-size: 20px;
+    vertical-align: auto;
+}
+
+.btnAddBasket {
+    border: var(--color-white);
+    border-radius: 20px;
+    height: 30px;
+    background-color: var(--color-white);
+    cursor: pointer;
+}
+
+.basketText {
+    text-align: center;
+    margin: 0;
+    font-weight: 700;
+}
+
+/*
+******* footer section
+*/
+
+.footerContainer{
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+.footerNav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+.copyright {
+    vertical-align: sub;
+    height: 18px;
 }
