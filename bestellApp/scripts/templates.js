@@ -8,7 +8,7 @@ function getNavigation() {
 }
 
 function getHeader() {
-    return `<section class="headerContainer">
+    return `<section id="start" class="headerContainer">
         <div class="headerImg"></div>
         <div class="circle"><img class="circleImg" src="assets/img/logoBurger.png"></div>
         <div class="headerInformation">
@@ -20,7 +20,7 @@ function getHeader() {
                     <p class="commentsNumber">(317)</p>
                 </div>
             </div>
-            <p class="headerText">The best of Burgers, Pizza, and Greens, all in one great place.</p>
+            <p class="headerText" id="menu">The best of Burgers, Pizza, and Greens, all in one great place.</p>
         </div>
     </section>`;
 }
@@ -118,6 +118,20 @@ function getFooter() {
                     Cookie Preferences
                 </a>
             </nav>
+        </div>
+        <div class="subFooterContainer">
+            <a href="#start">
+                <img src="assets/icons/home.svg" alt="Home">
+            </a>
+            <button class="subFooterButton">
+                <img src="assets/icons/person.svg" alt="Profile">
+            </button>
+            <a href="#menu">
+                <img src="assets/icons/takeout.svg" alt="Menu">
+            </a>
+            <button class="subFooterButton">
+                <img src="assets/icons/shopping_cart.svg" alt="ShoppingCart">
+            </button>
         </div>
     </footer>`;
 }
