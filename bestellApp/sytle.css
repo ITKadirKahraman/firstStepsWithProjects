@@ -232,3 +232,11 @@ a {
     vertical-align: sub;
     height: 18px;
 }
+
+/*
+****** query subfooter
+*/
+
+.subFooterContainer {
+    display: none;
+}
