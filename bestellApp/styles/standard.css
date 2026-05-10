@@ -1,7 +1,12 @@
+header, footer {
+    background-color: var(--background-color);
+}
+
 html, body {
     margin: var(--size-0);
     padding: var(--size-0);
     width: var(--size-100P);
+    font-family: var(--font-family);
 }
 
 main {
