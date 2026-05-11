@@ -90,3 +90,5 @@ let salad = [
         "added": false
     }
 ]
+
+let basket = [];
