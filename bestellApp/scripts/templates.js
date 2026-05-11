@@ -60,7 +60,7 @@ function getBurger(index) {
             <p class="cardSubtext">${burger[index].description}</p>
             <div class="priceAndAdd">
                 <p class="price">${burger[index].price} <strong>€</strong></p>
-                <button class="btnAddBasket" id="btnAddBasket" onclick="addToBasket(index)">
+                <button class="btnAddBasket" id="btnAddBasket" onclick="addToBasket(burger[${index}])">
                     <p class="basketText">${salad[index].added ? 'Added' : 'Add to basket'}</p>
                 </button>
             </div>
@@ -77,7 +77,7 @@ function getPizza(index) {
             <p class="cardSubtext">${pizza[index].description}</p>
             <div class="priceAndAdd">
                 <p class="price">${pizza[index].price} <strong>€</strong></p>
-                <button class="btnAddBasket" id="btnAddBasket" onclick="addToBasket(index)">
+                <button class="btnAddBasket" id="btnAddBasket" onclick="addToBasket(pizza[${index}])">
                     <p class="basketText">${salad[index].added ? 'Added' : 'Add to basket'}</p>
                 </button>
             </div>
@@ -94,7 +94,7 @@ function getSalad(index) {
             <p class="cardSubtext">${salad[index].description}</p>
             <div class="priceAndAdd">
                 <p class="price">${salad[index].price} <strong>€</strong></p>
-                <button class="btnAddBasket" id="btnAddBasket" onclick="addToBasket(index)">
+                <button class="btnAddBasket" id="btnAddBasket" onclick="addToBasket(salad[${index}])">
                     <p class="basketText">${salad[index].added ? 'Added' : 'Add to basket'}</p>
                 </button>
             </div>
@@ -134,4 +134,79 @@ function getFooter() {
             </button>
         </div>
     </footer>`;
+}
+
+function basketTemplate() {
+    return `<div class="basketSection">
+        <button class="closeBtn" id="closeBtn" onclick="closeBasket()">
+            <img id="close" src="assets/icons/close.svg" alt="Close">
+        </button>
+        <h3>Your Basket</h3>
+        <div id="basketItems"></div>
+            <div class="calculator">
+                <table>
+                    <tbody>
+                        <tr class="tableData">
+                            <td>Subtotal</td>
+                            <td id="subtotal"></td>
+                        </tr>
+                        <tr class="tableData">
+                            <td>Delivery fee</td>
+                            <td id="delivery"></td>
+                        </tr>
+                        <tr class="tableData">
+                            <td>Total</td>
+                            <td id="total"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button id="btnBuyNow" class="btnBuyNow">
+                </button>
+            </div>
+        
+    </div>`;
+}
+
+function basketItemTemplate(item, index) {
+    return `<div class="basketCard" id="basketItem">
+        <p class="basketOrderDishes">${item.amount}x ${item.name}</p>
+        <div class="basketCardBotton">
+            <p class="switchTrashMinusPlus">
+                <button onclick="${item.amount === 1 ? `removeFromBasket(${index})` : `decreaseAmount(${index})`}" class="removeCount">
+                    ${item.amount === 1 ? '<img class="trash" src="assets/icons/trash.svg" alt="Trash">' : '<img class="minus" src="assets/icons/minus.svg" alt="Minus"'};
+                </button>
+                <span>${item.amount}</span>
+                <button onclick="increaseAmount(${index})">
+                    <img class="plus" src="assets/icons/plus.svg" alt="Plus">
+                </button>
+            </p>
+            <p class="basketPrice">
+                ${(item.price * item.amount).toFixed(2)} €
+            </p>
+        </div>
+    </div>`;
+}
+
+function emptyBasket() {
+    return `<section class="emptySection">
+        <div class="basketIsEmpty">
+            <h3 class="emptyH3">Your Basket</h3>
+            <p class="emptyP">Nothing here yet.</p>
+            <p class="emptyP">Go ahead and choose something delicious!</p>
+            <img class="emptyImg" src="assets/icons/basketShoppingCart.svg" alt="Shopping cart">
+        </div>
+    </section>`;
+}
+
+function order() {
+    return `<section class="orderContainer">
+        <button clas="closeBtn" id="closeBtn" onlcick="closeBasket()">
+            <img id="close" src="assets/icons/close.svg" alt="Close">
+        </button>
+        <div class="orderText">
+            <img class="carImg" src="assets/icons/car.svg" alt="Car">
+            <h3>Order confirmed!</h3>
+            <p class="orderP">Your foor is on the way!</p>
+        </div>
+    </section>`;
 }
