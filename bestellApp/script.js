@@ -6,6 +6,7 @@ function renderPage() {
     renderNavigation();
     renderHeader();
     renderBurger();
+    renderBasket();
     renderPizza();
     renderSalad();
     renderFooter();
@@ -69,4 +70,85 @@ function renderSalad() {
 function renderFooter() {
     const footer = document.getElementById('foot');
     footer.innerHTML = getFooter();
+}
+
+function addToBasket(product) {
+    let productExisting = basket.find(
+        item => item.name === product.name
+    );
+
+    if(productExisting){
+        productExisting.amount++;
+    }else {
+        basket.push({
+            name: product.name,
+            price: product.price,
+            amount: 1
+        });
+    }
+
+    renderBasket();
+}
+
+function renderBasket() {
+    let basketRef = document.getElementById('basket');
+
+    if(basket.length === 0) {
+        basketRef.innerHTML = emptyBasket();
+        return;
+    }
+    basketRef.innerHTML = basketTemplate();
+    renderBasketItems();
+    calculateBasket();
+}
+
+function renderBasketItems() {
+    let basketItems = document.getElementById('basketItems');
+    basketItems.innerHTML = '';
+    for (let index = 0; index < basket.length; index++) {
+        let item = basket[index];
+        basketItems.innerHTML += basketItemTemplate(item, index);
+    }
+}
+
+function removeFromBasket(index) {
+    basket[index].amount--;
+    if(basket[index].amount <= 0) {
+        basket.splice(index, 1);
+    }
+    renderBasket();
+}
+
+function closeBasket() {
+    let closed = document.getElementById('closeBtn');
+    close.addEventListener("click", (event) => {
+        if(event.target === closed) {
+            closed.close();
+        }
+    });
+}
+
+function increaseAmount(index) {
+    basket[index].amount++;
+    renderBasket();
+}
+
+function descreaseAmount(index) {
+    basket[index].amount--;
+    renderBasket();
+}
+
+function calculateBasket() {
+    let subtotal = 0;
+    for (let index = 0; index < basket.length; index++) {
+        subtotal += basket[index].price * basket[index].amount;
+    }
+
+    let delivery = 4.99;
+    let total = subtotal + delivery;
+
+    document.getElementById('subtotal').innerHTML = subtotal.toFixed(2).toString().replace(".", ",") + " €";
+    document.getElementById('delivery').innerHTML = delivery.toFixed(2).toString().replace(".", ",") + " €";
+    document.getElementById('total').innerHTML = total.toFixed(2).toString(".", ",") + " €";
+    document.getElementById('btnBuyNow').innerHTML = total.toFixed(2).toString().replace(".", ",") + " €";
 }
