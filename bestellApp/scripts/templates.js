@@ -137,46 +137,44 @@ function getFooter() {
 }
 
 function basketTemplate() {
-    return `<div class="basketSection">
+    return `<div class="basketSection" id="basketSection">
         <button class="closeBtn" id="closeBtn" onclick="closeBasket()">
             <img id="close" src="assets/icons/close.svg" alt="Close">
         </button>
         <h3>Your Basket</h3>
         <div id="basketItems"></div>
-            <div class="calculator">
-                <table>
-                    <tbody>
-                        <tr class="tableData">
-                            <td>Subtotal</td>
-                            <td id="subtotal"></td>
-                        </tr>
-                        <tr class="tableData">
-                            <td>Delivery fee</td>
-                            <td id="delivery"></td>
-                        </tr>
-                        <tr class="tableData">
-                            <td>Total</td>
-                            <td id="total"></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <button id="btnBuyNow" class="btnBuyNow">
-                </button>
-            </div>
-        
+        <div class="calculator">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Subtotal</td>
+                        <td class="tdEnd" id="subtotal"></td>
+                    </tr>
+                    <tr>
+                        <td>Delivery fee</td>
+                        <td class="tdEnd" id="delivery"></td>
+                    </tr>
+                    <tr>
+                        <th>Total</th>
+                        <th class="tdEnd" id="total"></th>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="btnBuyNow" class="btnBuyNow" onclick="openOrder()"></button>
+        </div>
     </div>`;
 }
 
 function basketItemTemplate(item, index) {
     return `<div class="basketCard" id="basketItem">
-        <p class="basketOrderDishes">${item.amount}x ${item.name}</p>
+        <p class="basketOrderDishes">${item.amount} x ${item.name}</p>
         <div class="basketCardBotton">
             <p class="switchTrashMinusPlus">
-                <button onclick="${item.amount === 1 ? `removeFromBasket(${index})` : `decreaseAmount(${index})`}" class="removeCount">
-                    ${item.amount === 1 ? '<img class="trash" src="assets/icons/trash.svg" alt="Trash">' : '<img class="minus" src="assets/icons/minus.svg" alt="Minus"'};
+                <button onclick="${item.amount === 1 ? `removeFromBasket(${index})` : `descreaseAmount(${index})`}" class="removeCount">
+                    ${item.amount === 1 ? '<img class="trash" src="assets/icons/trash.svg" alt="Trash">' : '<img class="minus" src="assets/icons/minus.svg" alt="Minus">'}
                 </button>
-                <span>${item.amount}</span>
-                <button onclick="increaseAmount(${index})">
+                <span class="amount">${item.amount}</span>
+                <button class="btnPlus" onclick="increaseAmount(${index})">
                     <img class="plus" src="assets/icons/plus.svg" alt="Plus">
                 </button>
             </p>
@@ -188,19 +186,18 @@ function basketItemTemplate(item, index) {
 }
 
 function emptyBasket() {
-    return `<section class="emptySection">
+    return `<div class="basketSection">
         <div class="basketIsEmpty">
             <h3 class="emptyH3">Your Basket</h3>
-            <p class="emptyP">Nothing here yet.</p>
-            <p class="emptyP">Go ahead and choose something delicious!</p>
+            <p class="emptyP">Nothing here yet. <br> Go ahead and choose <br> something delicious! </p>
             <img class="emptyImg" src="assets/icons/basketShoppingCart.svg" alt="Shopping cart">
         </div>
-    </section>`;
+    </div>`;
 }
 
 function order() {
-    return `<section class="orderContainer">
-        <button clas="closeBtn" id="closeBtn" onlcick="closeBasket()">
+    return `<dialog class="orderContainer" id="orderContainer">
+        <button class="closeBtnOrder" id="closeBtn" onclick="closeOrder()">
             <img id="close" src="assets/icons/close.svg" alt="Close">
         </button>
         <div class="orderText">
@@ -208,5 +205,5 @@ function order() {
             <h3>Order confirmed!</h3>
             <p class="orderP">Your foor is on the way!</p>
         </div>
-    </section>`;
+    </dialog>`;
 }
