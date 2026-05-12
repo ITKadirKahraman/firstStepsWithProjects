@@ -109,6 +109,9 @@ header {
 }
 
 .basketContent {
+    position: sticky;
+    top: 0px;
+    align-self: flex-start;
     width: 400px;
     flex-grow: 1;
 }
@@ -267,13 +270,150 @@ a {
 */
 
 .basketSection {
-    position: sticky;
-    top: 0px;
+    
     background-color: var(--color-basketBackground);
     height: 800px;
     width: 100%;
     border-radius: 30px 0 0 30px;
-    padding: 50px 5px;
+    padding: 50px 2px;
+}
+
+/* full basket section */
+
+.closeBtn {
+    display: none;
+}
+
+h3 {
+    color: var(--color-basketCard);
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+}
+
+.basketCard {
+    background-color: var(--color-basketCard);
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    margin: 10px 0 0 0;
+    margin-left: 15%;
+    height: 70px;
+    width: 280px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.basketOrderDishes {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.basketCardBotton {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+}
+
+.switchTrashMinusPlus {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0;
+}
+
+.removeCount {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.trash {
+    height: 24px;
+    align-items: center;
+    vertical-align: auto;
+}
+
+.removeCount:hover .trash {
+    content: url("assets/icons/trashHover.svg");
+}
+
+.minus {
+    width: 24px;
+    font-weight: 600;
+}
+
+.removeCount:hover .minus {
+    content: url("assets/icons/minusHover.svg");
+}
+
+.amount {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.btnPlus {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+}
+
+.plus {
+    width: 24px;
+    font-weight: 600;
+}
+
+.btnPlus:hover .plus {
+    content: url("assets/icons/plusHover.svg")
+}
+
+.basketPrice {
+    font-size: 24px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* calculator basket section */
+.calculator {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin: 10px 0 0 0;
+    margin-left: 15%;
+    font-size: 18px;
+    font-weight: 600;
+    width: 280px;
+    color: var(--color-white);
+}
+
+table {
+    margin-bottom: 20px;
+}
+
+.tdEnd {
+    text-align: end;
+}
+
+th {
+    border-top: 2px solid var(--color-white);
+    text-align: start;
+}
+
+.btnBuyNow {
+    background: var(--background-color);
+    cursor: pointer;
+    color: var(--color-white);
+    font-size: 24px;
+    font-weight: 600;
+    border-radius: 25px;
+    height: 50px;
 }
 
 /* empty basket section */
@@ -283,6 +423,7 @@ a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: 400px;
 }
 
 .emptyH3 {
@@ -306,4 +447,43 @@ a {
     height: 150px;
     width: 150px;
     margin-top: 50px;
+}
+
+/* order section */
+
+.orderContainer {
+    background: var(--color-basketBackground);
+    border-radius: 25px;
+    height: 150px;
+}
+
+.closeBtnOrder {
+    display: flex;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    height: 24px;
+    width: 24px;
+}
+
+.close {
+    height: 100%;
+}
+
+.orderText {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.carImg {
+    height: 48px;
+}
+
+.orderP {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--color-basketCard);
 }
