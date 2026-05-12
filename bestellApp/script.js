@@ -3,6 +3,7 @@ function init() {
 }
 
 function renderPage() {
+    getFromLocalStorage();
     renderNavigation();
     renderHeader();
     renderBurger();
@@ -10,6 +11,7 @@ function renderPage() {
     renderPizza();
     renderSalad();
     renderFooter();
+    return document.getElementById('order').innerHTML = order();
 }
 
 function renderNavigation() {
@@ -87,6 +89,7 @@ function addToBasket(product) {
         });
     }
 
+    saveToLocalStorage();
     renderBasket();
 }
 
@@ -116,16 +119,13 @@ function removeFromBasket(index) {
     if(basket[index].amount <= 0) {
         basket.splice(index, 1);
     }
+    saveToLocalStorage();
     renderBasket();
 }
 
-function closeBasket() {
-    let closed = document.getElementById('closeBtn');
-    close.addEventListener("click", (event) => {
-        if(event.target === closed) {
-            closed.close();
-        }
-    });
+function closeOrder() {
+    const dialogClose = document.getElementById('orderContainer');
+    dialogClose.close();
 }
 
 function increaseAmount(index) {
@@ -149,6 +149,28 @@ function calculateBasket() {
 
     document.getElementById('subtotal').innerHTML = subtotal.toFixed(2).toString().replace(".", ",") + " €";
     document.getElementById('delivery').innerHTML = delivery.toFixed(2).toString().replace(".", ",") + " €";
-    document.getElementById('total').innerHTML = total.toFixed(2).toString(".", ",") + " €";
-    document.getElementById('btnBuyNow').innerHTML = total.toFixed(2).toString().replace(".", ",") + " €";
+    document.getElementById('total').innerHTML = total.toFixed(2).toString().replace(".", ",") + " €";
+    document.getElementById('btnBuyNow').innerHTML = "Buy now (" + total.toFixed(2).toString().replace(".", ",") + " €)";
+}
+
+function openOrder() {
+    const order = document.getElementById('orderContainer');
+    order.showModal();
+    basket = [];
+    renderBasket();
+    setTimeout(() => {
+        order.close();
+    }, 3000);
+}
+
+function saveToLocalStorage() {
+    localStorage.setItem("dishes", JSON.stringify(basket));
+}
+
+function getFromLocalStorage() {
+    const comment = localStorage.getItem("dishes");
+    if(comment){
+        basket = JSON.parse(comment);
+        renderBasket();
+    }
 }
