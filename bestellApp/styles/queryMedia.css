@@ -1,4 +1,19 @@
 @media (max-width: 520px){
+    .contentSides {
+        flex-direction: column;
+        flex-grow: 2;
+        gap: 0;
+        padding: 0;
+    }
+
+    .dishesContent {
+        width: 490px;
+    }
+
+    .sectionBurger {
+        padding: 10px;
+    }
+
     .cardSubtext {
         font-size: 16px;
         font-weight: 200;
@@ -6,6 +21,54 @@
 
     .footerContainer {
         margin-bottom: 60px;
+    }
+
+    .basketContent {
+        display: none;
+    }
+
+    .closeContainer {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+
+    .closeBtn {
+        display: flex;
+        height: 24px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .close {
+        height: 24px;
+    }
+
+    .closeBtn:hover .close {
+        content: url(../assets/icons/closeHover.svg);
+        height: 24px;
+    }
+
+    .basketSection {
+        background-color: var(--color-basketBackground);
+        height: min(400px, calc(100vh - 100px));
+        border-radius: 30px 30px 0 0;
+    }
+
+    .itemsScroll {
+        max-height: 130px;
+    }
+
+    .showBasket {
+        background-color: var(--color-basketBackground);
+        display: block;
+        bottom: 0;
+        left: 5%;
+        width: 90%;
+        border-radius: 30px 30px 0 0;
+        justify-content: center;
+        align-items: flex-end;
     }
 
     .subFooterContainer {
@@ -25,9 +88,37 @@
         border: none;
         cursor: pointer;
     }
+
+    .subFooterButton:hover .shopping {
+        content: url(../assets/icons/basketShoppingCardHover.svg);
+        height: 24px;
+    }
+
+    .start:hover .home {
+        content: url(../assets/icons/homeHover.svg);
+        height: 24px;
+    }
+
+    .subFooterButton:hover .person {
+        content: url(../assets/icons/personHover.svg);
+        height: 24px;
+    }
+
+    .menu:hover .takeout {
+        content: url(../assets/icons/takeoutHover.svg);
+        height: 24px;
+    }
 }
 
 @media (max-width: 490px){
+    .dishesContent {
+        width: 440px;
+    }
+
+    .sectionBurger {
+        padding-left: 30px;
+    }
+
     .navContainer {
         height: 60px;
     }
@@ -89,7 +180,35 @@
     }
 }
 
-@media (max-width: 400px){
+@media (max-width: 440px){
+    .dishesContent {
+        width: 380px;
+    }
+
+    .sectionBurger {
+        padding-left: 50px;
+    }
+
+    .showBasket {
+        width: 80%;
+    }
+
+    .basketSection {
+        width: 90%;
+    }
+
+    .basketCard {
+        width: 70%;
+    }
+
+    .calculator {
+        width: 80%;
+    }
+
+    .btnBuyNow {
+        height: 75px;
+    }
+
     .cardHeader {
         font-size: 18px;
     }
@@ -100,4 +219,27 @@
 }
 
 @media (max-width: 375px){
+    .dishesContent {
+        width: 300px;
+    }
+
+    .sectionBurger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5%;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--color-light);
+        border-radius: 12px;
+        height: 250px;
+        width: 212px;
+    }
+
+    .basketOrderDishes {
+        font-size: 16px;
+    }
 }
