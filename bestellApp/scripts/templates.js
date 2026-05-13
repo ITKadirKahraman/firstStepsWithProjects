@@ -120,17 +120,17 @@ function getFooter() {
             </nav>
         </div>
         <div class="subFooterContainer">
-            <a href="#start">
-                <img src="assets/icons/home.svg" alt="Home">
+            <a href="#start" class="start">
+                <img class="home" src="assets/icons/home.svg" alt="Home">
             </a>
             <button class="subFooterButton">
-                <img src="assets/icons/person.svg" alt="Profile">
+                <img class="person" src="assets/icons/person.svg" alt="Profile">
             </button>
-            <a href="#menu">
-                <img src="assets/icons/takeout.svg" alt="Menu">
+            <a href="#menu" class="menu">
+                <img class="takeout" src="assets/icons/takeout.svg" alt="Menu">
             </a>
-            <button class="subFooterButton">
-                <img src="assets/icons/shopping_cart.svg" alt="ShoppingCart">
+            <button class="subFooterButton" id="openBasket" onclick="openBasket()">
+                <img class="shopping" src="assets/icons/shopping_cart.svg" alt="ShoppingCart">
             </button>
         </div>
     </footer>`;
@@ -138,30 +138,16 @@ function getFooter() {
 
 function basketTemplate() {
     return `<div class="basketSection" id="basketSection">
-        <button class="closeBtn" id="closeBtn" onclick="closeBasket()">
-            <img id="close" src="assets/icons/close.svg" alt="Close">
-        </button>
-        <h3>Your Basket</h3>
-        <div id="basketItems"></div>
-        <div class="calculator">
-            <table>
-                <tbody>
-                    <tr>
-                        <td>Subtotal</td>
-                        <td class="tdEnd" id="subtotal"></td>
-                    </tr>
-                    <tr>
-                        <td>Delivery fee</td>
-                        <td class="tdEnd" id="delivery"></td>
-                    </tr>
-                    <tr>
-                        <th>Total</th>
-                        <th class="tdEnd" id="total"></th>
-                    </tr>
-                </tbody>
-            </table>
-            <button id="btnBuyNow" class="btnBuyNow" onclick="openOrder()"></button>
+        <div class="closeContainer"> 
+            <button class="closeBtn" id="closeBtn" onclick="closeBasket()">
+                <img class="close" id="close" src="assets/icons/close.svg" alt="Close">
+            </button>
         </div>
+        <h3>Your Basket</h3>
+        <div class="itemsScroll">
+            <div id="basketItems"></div>
+        </div>
+        <div id="calculator"></div>
     </div>`;
 }
 
@@ -182,6 +168,28 @@ function basketItemTemplate(item, index) {
                 ${(item.price * item.amount).toFixed(2)} €
             </p>
         </div>
+    </div>`;
+}
+
+function calculator() {
+    return `<div class="calculator">
+        <table>
+            <tbody>
+                <tr>
+                    <td>Subtotal</td>
+                    <td class="tdEnd" id="subtotal"></td>
+                </tr>
+                <tr>
+                    <td>Delivery fee</td>
+                    <td class="tdEnd" id="delivery"></td>
+                </tr>
+                <tr>
+                    <th>Total</th>
+                    <th class="tdEnd" id="total"></th>
+                </tr>
+            </tbody>
+        </table>
+        <button id="btnBuyNow" class="btnBuyNow" onclick="openOrder()"></button>
     </div>`;
 }
 
