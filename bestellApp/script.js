@@ -102,6 +102,7 @@ function renderBasket() {
     }
     basketRef.innerHTML = basketTemplate();
     renderBasketItems();
+    renderCalculator();
     calculateBasket();
 }
 
@@ -112,6 +113,11 @@ function renderBasketItems() {
         let item = basket[index];
         basketItems.innerHTML += basketItemTemplate(item, index);
     }
+}
+
+function renderCalculator() {
+    let calcu = document.getElementById('calculator');
+    calcu.innerHTML = calculator();
 }
 
 function removeFromBasket(index) {
@@ -161,6 +167,16 @@ function openOrder() {
     setTimeout(() => {
         order.close();
     }, 3000);
+}
+
+function openBasket() {
+    const basket = document.querySelector('.basketContent');
+    basket.classList.add('showBasket');
+}
+
+function closeBasket() {
+    const basket = document.querySelector('.basketContent');
+    basket.classList.remove('showBasket');
 }
 
 function saveToLocalStorage() {
