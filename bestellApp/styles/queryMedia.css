@@ -1,3 +1,16 @@
+@media (max-width: 3600px) {
+    .card {
+        width: 75%;
+    }
+}
+
+@media (max-width: 1090px) {
+    .cardSubtext {
+        font-size: 15px;
+    }
+}
+
+
 @media (max-width: 925px) {
     .basketSection {
         width: 90%;
@@ -6,9 +19,30 @@
     .sectionBurger {
         padding: 10px;
     }
-    
+
     .cardSubtext {
         font-size: 14px;
+    }
+
+    .dNone {
+        display: none;
+    }
+
+    .basketIsEmpty .closeBtn {
+        display: flex;
+        margin-left: -70%;
+    }
+
+    .basketIsEmpty .emptyH3 {
+        margin-top: 10px;
+    }
+
+    .cardHeader {
+        font-size: 18px;
+    }
+
+    .basketIsEmpty .closeBtn {
+        display: none;
     }
 }
 
@@ -18,6 +52,10 @@
         flex-grow: 2;
         gap: 0;
         padding: 0;
+    }
+
+    .basketIsEmpty .closeBtn {
+        display: flex;
     }
 
     .dishesContent {
@@ -36,15 +74,6 @@
     .sectionBurger {
         width: 100%;
         padding: 10px;
-    }
-    
-    .cardSubtext {
-        font-size: 14px;
-    }
-
-    .cardSubtext {
-        font-size: 16px;
-        font-weight: 200;
     }
 
     .footerContainer {
@@ -232,10 +261,6 @@
         font-size: 30px;
     }
 
-    .cardSubtext {
-        font-size: 14px;
-    }
-
     .footerContainer {
         height: 100px;
     }
@@ -282,10 +307,6 @@
         width: 80%;
     }
 
-    .cardHeader {
-        font-size: 18px;
-    }
-
     .cardSubtext {
         font-size: 12px;
     }
@@ -310,6 +331,7 @@
     .card {
         display: flex;
         flex-direction: column;
+        margin-left: 10%;
         background-color: var(--color-light);
         border-radius: 12px;
         height: 250px;
