@@ -55,11 +55,11 @@ function getSeperatorSalad() {
 function getBurger(index) {
     return `<section class="sectionBurger">
         <div class="card" id="card">
-            <img class="cardImg" src="assets/img/${burger[index].image}.svg" alt="Burger">
+            <img class="cardImg" src="assets/img/${burger[index].image}.png" alt="Burger">
             <p class="cardHeader">${burger[index].name}</p>
             <p class="cardSubtext">${burger[index].description}</p>
             <div class="priceAndAdd">
-                <p class="price">${burger[index].price} <strong>€</strong></p>
+                <p class="price">${burger[index].price.toFixed(2).toString().replace(".", ",")} <strong>€</strong></p>
                 <button class="btnAddBasket" id="btnAddBasket" onclick="addToBasket(burger[${index}])">
                     <p class="basketText">${salad[index].added ? 'Added' : 'Add to basket'}</p>
                 </button>
@@ -72,11 +72,11 @@ function getBurger(index) {
 function getPizza(index) {
     return `<section class="sectionBurger">
         <div class="card" id="card">
-            <img class="cardImg" src="assets/img/${pizza[index].image}.svg" alt="Burger">
+            <img class="cardImg" src="assets/img/${pizza[index].image}.png" alt="Burger">
             <p class="cardHeader">${pizza[index].name}</p>
             <p class="cardSubtext">${pizza[index].description}</p>
             <div class="priceAndAdd">
-                <p class="price">${pizza[index].price} <strong>€</strong></p>
+                <p class="price">${pizza[index].price.toFixed(2).toString().replace(".", ",")} <strong>€</strong></p>
                 <button class="btnAddBasket" id="btnAddBasket" onclick="addToBasket(pizza[${index}])">
                     <p class="basketText">${salad[index].added ? 'Added' : 'Add to basket'}</p>
                 </button>
@@ -89,11 +89,11 @@ function getPizza(index) {
 function getSalad(index) {
     return `<section class="sectionBurger">
         <div class="card" id="card">
-            <img class="cardImg" src="assets/img/${salad[index].image}.svg" alt="Burger">
+            <img class="cardImg" src="assets/img/${salad[index].image}.png" alt="Burger">
             <p class="cardHeader">${salad[index].name}</p>
             <p class="cardSubtext">${salad[index].description}</p>
             <div class="priceAndAdd">
-                <p class="price">${salad[index].price} <strong>€</strong></p>
+                <p class="price">${salad[index].price.toFixed(2).toString().replace(".", ",")} <strong>€</strong></p>
                 <button class="btnAddBasket" id="btnAddBasket" onclick="addToBasket(salad[${index}])">
                     <p class="basketText">${salad[index].added ? 'Added' : 'Add to basket'}</p>
                 </button>
@@ -165,7 +165,7 @@ function basketItemTemplate(item, index) {
                 </button>
             </p>
             <p class="basketPrice">
-                ${(item.price * item.amount).toFixed(2)} €
+                ${(item.price * item.amount).toFixed(2).toString().replace(".", ",")} €
             </p>
         </div>
     </div>`;
@@ -196,6 +196,9 @@ function calculator() {
 function emptyBasket() {
     return `<div class="basketSection">
         <div class="basketIsEmpty">
+            <button class="closeBtn" id="closeBtn" onclick="closeBasket()">
+                <img class="close" id="close" src="assets/icons/close.svg" alt="Close">
+            </button>
             <h3 class="emptyH3">Your Basket</h3>
             <p class="emptyP">Nothing here yet. <br> Go ahead and choose <br> something delicious! </p>
             <img class="emptyImg" src="assets/icons/basketShoppingCart.svg" alt="Shopping cart">
