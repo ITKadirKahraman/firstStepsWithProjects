@@ -27,7 +27,7 @@ header {
 }
 
 .headerImg {
-    background-image: url(assets/img/header.jpg);
+    background-image: url(assets/img/header.png);
     background-position: bottom;
     background-size: cover;
     height: 400px;
@@ -431,6 +431,10 @@ th {
     align-items: center;
     flex-direction: column;
     height: 400px;
+}
+
+.basketIsEmpty .closeBtn {
+    display: none;
 }
 
 .emptyH3 {
