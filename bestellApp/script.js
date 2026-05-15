@@ -161,11 +161,14 @@ function calculateBasket() {
 
 function openOrder() {
     const order = document.getElementById('orderContainer');
+    const basketContent = document.getElementById('basket');
     order.showModal();
+    basketContent.classList.add('dNone');
     basket = [];
     renderBasket();
     setTimeout(() => {
         order.close();
+        basketContent.classList.remove('dNone');
     }, 3000);
 }
 
