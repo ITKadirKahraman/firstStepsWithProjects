@@ -1,19 +1,18 @@
-@media (max-width: 3600px) {
-    .card {
-        width: 75%;
-    }
-}
-
 @media (max-width: 1090px) {
     .cardSubtext {
         font-size: 15px;
+        height: 20px;
     }
 }
 
 
 @media (max-width: 925px) {
+    .navContainer {
+        padding: 0 40px;
+    }
+
     .basketSection {
-        width: 90%;
+        width: 350px;
     }
 
     .sectionBurger {
@@ -21,7 +20,7 @@
     }
 
     .cardSubtext {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .dNone {
@@ -44,6 +43,26 @@
     .basketIsEmpty .closeBtn {
         display: none;
     }
+
+    .emptyP {
+        margin-top: 20px;
+    }
+
+    .emptyImg {
+        margin-top: 20px;
+    }
+
+    .categoryWrapper {
+        left: 66.5%;
+    }
+
+    .basketCard {
+        margin-left: 10%;
+    }
+
+    .basketOrderDishes {
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 880px) {
@@ -65,10 +84,6 @@
     .sectionBurger {
         padding: 10px;
         margin-left: 15%;
-    }
-
-    .basketSection {
-        width: 90%;
     }
 
     .sectionBurger {
@@ -109,7 +124,7 @@
 
     .basketSection {
         background-color: var(--color-basketBackground);
-        height: min(400px, calc(100vh - 100px));
+        height: min(450px, calc(100vh - 100px));
         border-radius: 30px 30px 0 0;
     }
 
@@ -133,8 +148,8 @@
         background-color: var(--color-basketBackground);
         display: block;
         bottom: 0;
-        left: 25%;
-        width: 50%;
+        left: 20%;
+        width: 350px;
         border-radius: 30px 30px 0 0;
         justify-content: center;
         align-items: flex-end;
@@ -222,7 +237,7 @@
     }
 
     .sectionBurger {
-        padding-left: 10px;
+        padding-left: 1px;
     }
 
     .navContainer {
@@ -243,8 +258,8 @@
     }
 
     .h2Container {
-        justify-content: flex-end;
-        flex-direction: column;
+        justify-content: center;
+        flex-direction: row;
         gap: 0;
     }
 
@@ -280,6 +295,16 @@
     #botToMid {
         order: 2;
     }
+
+    .categoryWrapper {
+        left: 54.5%;
+    }
+}
+
+@media (max-width: 470px) {
+    .categoryWrapper {
+        left: 51.5%;
+    }
 }
 
 @media (max-width: 440px){
@@ -296,11 +321,11 @@
     }
 
     .basketSection {
-        width: 90%;
+        width: 95%;
     }
 
     .basketCard {
-        width: 70%;
+        width: 80%;
     }
 
     .calculator {
@@ -334,11 +359,16 @@
         margin-left: 10%;
         background-color: var(--color-light);
         border-radius: 12px;
-        height: 250px;
+        height: 280px;
         width: 90%;
     }
 
-    .basketOrderDishes {
-        font-size: 16px;
+    .basketCard {
+        width: 82%;
+        height: 80px;
+    }
+
+    .categoryWrapper {
+        left: 59%;
     }
 }
