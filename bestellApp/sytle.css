@@ -1,7 +1,7 @@
 /*
 ****** navigation
 */
-header {
+.header {
     position: fixed;
     top: 0;
     left: 0;
@@ -15,7 +15,8 @@ header {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    padding: 0 40px;
+    padding: 0 calc((100% - 1440px) / 2);
+    max-width: 1920px;
 }
 
 /*
@@ -68,9 +69,9 @@ header {
 .starContainer {
     background-color: var(--color-starBackground);
     display: flex;
-    justify-content: center;
+    align-items: center;
     border-radius: 4px;
-    padding: 8px;
+    padding: 4px;
     gap: 8px;
 }
 
@@ -102,6 +103,7 @@ header {
     display: flex;
     flex-direction: row;
     flex-grow: 1;
+    padding: 0 calc((100% - 1440px) / 2);
 }
 
 .dishesContent {
@@ -119,12 +121,28 @@ header {
 /*
 ****** menu category all
 */
-
+/*
 .categorySeperator {
     position: absolute;
     width: 99%;
     margin-left: 1px;
     height: 60px;
+    background-color: var(--background-color);
+    z-index: -1;
+}
+*/
+
+.categoryWrapper {
+    position: relative;
+    left: 70%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 60px;
+}
+
+.categorySeperator {
+    position: absolute;
+    inset: 0;
     background-color: var(--background-color);
     z-index: -1;
 }
@@ -138,12 +156,26 @@ h2 {
     font-size: 40px;
     font-weight: 700;
 }
-
+/*
 .h2Container {
     gap: 40px;
     height: 60px;
     align-items: center;
     display: flex;
+    padding: 0 calc((100% - 1440px) / 2);
+}
+*/
+
+.h2Container {
+    max-width: 1440px;
+    margin: 0 auto;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    padding: 0 24px;
 }
 
 .dishesIcon {
@@ -167,7 +199,7 @@ h2 {
     flex-direction: column;
     background-color: var(--color-light);
     border-radius: 12px;
-    height: 230px;
+    height: 300px;
     width: 712px;
 }
 
@@ -192,6 +224,7 @@ h2 {
     font-size: 18px;
     font-weight: 500;
     height: 20px;
+    padding-bottom: 60px;
 }
 
 .priceAndAdd {
@@ -201,6 +234,7 @@ h2 {
     flex-direction: row;
     padding-left: 10px;
     padding-right: 10px;
+    height: 40px;
 }
 
 .price{
@@ -286,7 +320,7 @@ a {
 
 h3 {
     color: var(--color-basketCard);
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 600;
     margin: 0;
     text-align: center;
@@ -321,7 +355,7 @@ h3 {
 .basketCardBotton {
     display: flex;
     justify-content: space-between;
-    height: 50px;
+    height: 40px;
 }
 
 .switchTrashMinusPlus {
@@ -384,7 +418,7 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    margin: 0;
 }
 
 /* calculator basket section */
@@ -394,7 +428,7 @@ h3 {
     flex-direction: column;
     margin: 10px 0 0 0;
     margin-left: 15%;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     width: 280px;
     color: var(--color-white);
@@ -402,6 +436,12 @@ h3 {
 
 table {
     margin-bottom: 20px;
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+
+td {
+    padding: 0;
 }
 
 .tdEnd {
@@ -411,6 +451,7 @@ table {
 th {
     border-top: 2px solid var(--color-white);
     text-align: start;
+    padding: 0;
 }
 
 .btnBuyNow {
@@ -421,6 +462,11 @@ th {
     font-weight: 600;
     border-radius: 25px;
     height: 50px;
+}
+
+.btnBuyNow:hover {
+    color: black;
+    border-color: white;
 }
 
 /* empty basket section */
@@ -493,7 +539,7 @@ th {
 
 .orderP {
     text-align: center;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 600;
     margin: 0;
     color: var(--color-basketCard);
