@@ -1,5 +1,5 @@
 function getNavigation() {
-    return `<header>
+    return `<header class="header">
             <div class="navContainer">
                 <img src="assets/icons/bestellAppLogo.svg" alt="Firmen Logo">
                 <img class="imgBar" src="assets/icons/bars.svg" alt="Menüleiste">
@@ -26,28 +26,34 @@ function getHeader() {
 }
 
 function getSeperatorBurger() {
-    return `<div class="categorySeperator"></div>    
-        <div class="h2Container">
-            <img class="categoryIcon dishesIcon" src="assets/icons/burger.svg" alt="Burger">
-            <h2>Burger</h2>
+    return `<div class="categoryWrapper">
+            <div class="categorySeperator"></div>    
+            <div class="h2Container">
+                <img class="categoryIcon dishesIcon" src="assets/icons/burger.svg" alt="Burger">
+                <h2>Burger</h2>
+            </div>
         </div>
     `;
 }
 
 function getSeperatorPizza() {
-    return `<div class="categorySeperator"></div>    
-        <div class="h2Container">
-            <img class="categoryIcon dishesIcon" src="assets/icons/pizza.svg" alt="Pizza">
-            <h2>Pizza (30cm)</h2>
+    return `<div class="categoryWrapper">
+            <div class="categorySeperator"></div>    
+            <div class="h2Container">
+                <img class="categoryIcon dishesIcon" src="assets/icons/pizza.svg" alt="Pizza">
+                <h2>Pizza</h2>
+            </div>
         </div>
     `;
 }
 
 function getSeperatorSalad() {
-    return `<div class="categorySeperator"></div>    
-        <div class="h2Container">
-            <img class="categoryIcon dishesIcon" src="assets/icons/salad.svg" alt="Salad">
-            <h2>Salad</h2>
+    return `<div class="categoryWrapper">
+            <div class="categorySeperator"></div>    
+            <div class="h2Container">
+                <img class="categoryIcon dishesIcon" src="assets/icons/salad.svg" alt="Salad">
+                <h2>Salad</h2>
+            </div>
         </div>
     `;
 }
@@ -61,7 +67,7 @@ function getBurger(index) {
             <div class="priceAndAdd">
                 <p class="price">${burger[index].price.toFixed(2).toString().replace(".", ",")} <strong>€</strong></p>
                 <button class="btnAddBasket" id="btnAddBasket" onclick="addToBasket(burger[${index}])">
-                    <p class="basketText">${salad[index].added ? 'Added' : 'Add to basket'}</p>
+                    <p class="basketText">${burger[index].added ? 'Added' : 'Add to basket'}</p>
                 </button>
             </div>
         </div>
@@ -78,7 +84,7 @@ function getPizza(index) {
             <div class="priceAndAdd">
                 <p class="price">${pizza[index].price.toFixed(2).toString().replace(".", ",")} <strong>€</strong></p>
                 <button class="btnAddBasket" id="btnAddBasket" onclick="addToBasket(pizza[${index}])">
-                    <p class="basketText">${salad[index].added ? 'Added' : 'Add to basket'}</p>
+                    <p class="basketText">${pizza[index].added ? 'Added' : 'Add to basket'}</p>
                 </button>
             </div>
         </div>
