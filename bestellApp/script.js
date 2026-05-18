@@ -170,6 +170,7 @@ function openOrder() {
         order.close();
         basketContent.classList.remove('dNone');
     }, 3000);
+    closeBasket();
 }
 
 function openBasket() {
