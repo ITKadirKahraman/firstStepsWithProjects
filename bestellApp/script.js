@@ -4,74 +4,32 @@ function init() {
 
 function renderPage() {
     getFromLocalStorage();
-    renderNavigation();
-    renderHeader();
-    renderBurger();
+    renderPageSections();
     renderBasket();
-    renderPizza();
-    renderSalad();
-    renderFooter();
     return document.getElementById('order').innerHTML = order();
 }
 
-function renderNavigation() {
+function renderPageSections() {
     const nav = document.getElementById('nav');
-    nav.innerHTML += getNavigation();
-}
-
-function renderHeader() {
     const header = document.getElementById('header');
-    header.innerHTML += getHeader();
-}
-
-function renderBurgerSection() {
-    let content = getSeperatorBurger();
-
-    for (let index = 0; index < burger.length; index++) {
-        content += getBurger(index);
-    }
-
-    return content;
-}
-
-function renderBurger() {
-    const dishes = document.getElementById('burger');
-    dishes.innerHTML = renderBurgerSection();
-}
-
-function renderPizzaSection() {
-    let content = getSeperatorPizza();
-
-    for (let index = 0; index < burger.length; index++) {
-        content += getPizza(index);
-    }
-
-    return content;
-}
-
-function renderPizza() {
-    const dishes = document.getElementById('pizza');
-    dishes.innerHTML = renderPizzaSection();
-}
-
-function renderSaladSection() {
-    let content = getSeperatorSalad();
-
-    for (let index = 0; index < burger.length; index++) {
-        content += getSalad(index);
-    }
-
-    return content;
-}
-
-function renderSalad() {
-    const dishes = document.getElementById('salad');
-    dishes.innerHTML = renderSaladSection();
-}
-
-function renderFooter() {
     const footer = document.getElementById('foot');
+
+    nav.innerHTML = getNavigation();
+    header.innerHTML = getHeader();
+    renderCategory('burger', 'burger', 'Burger', 'burger');
+    renderCategory('pizza', 'pizza', 'Pizza', 'pizza');
+    renderCategory('salad', 'salad', 'Salad', 'salad');
     footer.innerHTML = getFooter();
+}
+
+function renderCategory(targetId, category, title, icon) {
+    let content = getSeparator(title, icon);
+
+    for (let dishesIndex = 0; dishesIndex < dishes[category].length; dishesIndex++) {
+        content += getDishes(category, dishesIndex, title);    
+    }
+
+    document.getElementById(targetId).innerHTML = content;
 }
 
 function addToBasket(product) {
@@ -91,6 +49,7 @@ function addToBasket(product) {
 
     saveToLocalStorage();
     renderBasket();
+    renderPageSections();
 }
 
 function renderBasket() {
@@ -127,6 +86,7 @@ function removeFromBasket(index) {
     }
     saveToLocalStorage();
     renderBasket();
+    renderPageSections();
 }
 
 function closeOrder() {
@@ -134,13 +94,12 @@ function closeOrder() {
     dialogClose.close();
 }
 
-function increaseAmount(index) {
-    basket[index].amount++;
-    renderBasket();
-}
+function counter(index, value) {
+    basket[index].amount += value;
 
-function descreaseAmount(index) {
-    basket[index].amount--;
+    if (basket[index].amount <= 0) {
+        basket.splice(index, 1);
+    }
     renderBasket();
 }
 
@@ -171,6 +130,7 @@ function openOrder() {
         basketContent.classList.remove('dNone');
     }, 3000);
     closeBasket();
+    renderPageSections();
 }
 
 function openBasket() {
@@ -191,6 +151,6 @@ function getFromLocalStorage() {
     const comment = localStorage.getItem("dishes");
     if(comment){
         basket = JSON.parse(comment);
-        renderBasket();
+        renderPageSections();
     }
 }
